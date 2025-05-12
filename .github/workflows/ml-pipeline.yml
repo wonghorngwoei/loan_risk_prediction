@@ -1,0 +1,121 @@
+name: ML Loan Risk Prediction Pipeline
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  schedule:
+    # Run every Sunday at 3 AM UTC
+    - cron: '0 3 * * 0'
+
+jobs:
+  train-model:
+    runs-on: ubuntu-latest
+    env:
+      PYTHON_VERSION: '3.9'
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ env.PYTHON_VERSION }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install lightgbm scikit-learn pandas numpy joblib
+
+    - name: Create directory structure
+      run: |
+        mkdir -p data
+        mkdir -p models
+        mkdir -p logs
+
+    - name: Run training pipeline
+      run: python train.py || exit 1
+      env:
+        BASE_DIR: ${{ github.workspace }}
+        DATA_DIR: ${{ github.workspace }}/data
+        MODEL_DIR: ${{ github.workspace }}/models
+        LOG_DIR: ${{ github.workspace }}/logs
+
+    - name: Upload trained model artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: model-artifacts
+        path: |
+          models/lightgbm_model.pkl
+          models/lightgbm_v*.pkl
+          logs/run_*/metrics.json
+
+    - name: Upload training logs
+      uses: actions/upload-artifact@v4
+      with:
+        name: training-logs
+        path: logs/run_*/*.log
+
+  run-predictions:
+    needs: train-model
+    runs-on: ubuntu-latest
+    env:
+        PYTHON_VERSION: '3.9'
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set up Python ${{ env.PYTHON_VERSION }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install lightgbm scikit-learn pandas numpy joblib imbalanced-learn
+
+    - name: Create directory structure
+      run: |
+        mkdir -p data
+        mkdir -p models
+        mkdir -p logs
+        mkdir -p data/predictions
+
+    - name: Download trained model
+      uses: actions/download-artifact@v3
+      with:
+        name: model-artifacts
+        path: models/
+
+    - name: Prepare input data
+      run: |
+        # Copy sample data to expected location
+        cp notebook/sample_loan_data.csv data/sample_loan_data.csv
+        echo "Input data prepared"
+
+    - name: Run predictions
+      run: python predict.py
+      env:
+        BASE_DIR: ${{ github.workspace }}
+        DATA_DIR: ${{ github.workspace }}/data
+        MODEL_DIR: ${{ github.workspace }}/models
+        LOG_DIR: ${{ github.workspace }}/logs
+        PREDICTION_DIR: ${{ github.workspace }}/data/predictions
+
+    - name: Upload prediction results
+      uses: actions/upload-artifact@v4
+      with:
+        name: prediction-results
+        path: data/predictions/predictions_*.csv
+
+    - name: Upload prediction logs
+      uses: actions/upload-artifact@v4
+      with:
+        name: prediction-logs
+        path: logs/loan_prediction_*.log
