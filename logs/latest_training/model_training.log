@@ -1,0 +1,107 @@
+2025-05-12 00:04:52,439 - model_training_20250512_000452 - INFO - === STARTING LOAN RISK MODEL TRAINING PIPELINE (RUN ID: 20250512_000452) ===
+2025-05-12 00:04:52,440 - model_training_20250512_000452 - INFO - Logs for this run will be saved to: c:\Users\Horng Woei\Desktop\MoneyLion\logs\run_20250512_000452
+2025-05-12 00:04:52,440 - model_training_20250512_000452 - INFO - Python version: 3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]
+2025-05-12 00:04:52,441 - model_training_20250512_000452 - INFO - NumPy version: 2.2.5
+2025-05-12 00:04:52,441 - model_training_20250512_000452 - INFO - Pandas version: 2.2.3
+2025-05-12 00:04:52,442 - model_training_20250512_000452 - INFO - LightGBM version: 4.6.0
+2025-05-12 00:04:52,442 - model_training_20250512_000452 - INFO - Loading data from: c:\Users\Horng Woei\Desktop\MoneyLion\data\final_loan_data.csv
+2025-05-12 00:04:55,051 - model_training_20250512_000452 - INFO - Data loaded successfully. Shape: (559592, 51)
+2025-05-12 00:04:55,051 - model_training_20250512_000452 - INFO - Starting data preparation
+2025-05-12 00:04:55,051 - model_training_20250512_000452 - INFO - Initial data shape: (559592, 51)
+2025-05-12 00:04:55,053 - model_training_20250512_000452 - INFO - Missing values in loanRisk target: 0
+2025-05-12 00:04:55,352 - model_training_20250512_000452 - INFO - Total missing values in dataset: 670061
+2025-05-12 00:04:55,353 - model_training_20250512_000452 - INFO - Columns with missing values:
+paymentStatus        135729
+paymentReturnCode    534332
+dtype: int64
+2025-05-12 00:04:55,413 - model_training_20250512_000452 - INFO - Data shape after dropping missing targets: (559592, 51)
+2025-05-12 00:04:55,417 - model_training_20250512_000452 - INFO - Target class distribution:
+loanRisk
+0    276345
+1    248896
+2     34351
+Name: count, dtype: int64
+2025-05-12 00:04:55,503 - model_training_20250512_000452 - INFO - Feature matrix shape: (559592, 49), Target vector shape: (559592,)
+2025-05-12 00:04:55,504 - model_training_20250512_000452 - INFO - Feature data types:
+bool       20
+object     18
+float64    11
+Name: count, dtype: int64
+2025-05-12 00:04:55,534 - model_training_20250512_000452 - INFO - Initializing feature preprocessor
+2025-05-12 00:04:55,535 - model_training_20250512_000452 - INFO - Applying feature preprocessing
+2025-05-12 00:05:03,686 - model_training_20250512_000452 - INFO - Performing train/test split
+2025-05-12 00:05:04,132 - model_training_20250512_000452 - INFO - Training set shape: (447673, 49), Test set shape: (111919, 49)
+2025-05-12 00:05:04,136 - model_training_20250512_000452 - INFO - Original class distribution:
+loanRisk
+0    221076
+1    199116
+2     27481
+Name: count, dtype: int64
+2025-05-12 00:05:04,138 - model_training_20250512_000452 - INFO - Number of classes: 3
+2025-05-12 00:05:04,138 - model_training_20250512_000452 - INFO - Applying SMOTE oversampling
+2025-05-12 00:05:49,257 - model_training_20250512_000452 - INFO - Post-SMOTE distribution:
+loanRisk
+1    221076
+0    221076
+2    221076
+Name: count, dtype: int64
+2025-05-12 00:05:49,258 - model_training_20250512_000452 - INFO - Oversampling ratio: 1.48x
+2025-05-12 00:05:49,263 - model_training_20250512_000452 - INFO - Starting model training
+2025-05-12 00:05:49,263 - model_training_20250512_000452 - INFO - Model hyperparameters: {
+  "objective": "multiclass",
+  "metric": "multi_logloss",
+  "boosting_type": "gbdt",
+  "num_class": 3,
+  "learning_rate": 0.08,
+  "num_leaves": 50,
+  "min_data_in_leaf": 100,
+  "feature_fraction": 0.7,
+  "verbose": -1,
+  "is_unbalance": true
+}
+2025-05-12 00:05:57,530 - model_training_20250512_000452 - INFO - Model training completed in 8.27 seconds
+2025-05-12 00:05:57,531 - model_training_20250512_000452 - INFO - Top 20 feature importances:
+2025-05-12 00:05:57,531 - model_training_20250512_000452 - INFO -   installmentIndex: 2378.0000
+2025-05-12 00:05:57,531 - model_training_20250512_000452 - INFO -   state: 1436.0000
+2025-05-12 00:05:57,532 - model_training_20250512_000452 - INFO -   originallyScheduledPaymentAmount: 1310.0000
+2025-05-12 00:05:57,532 - model_training_20250512_000452 - INFO -   apr: 1166.0000
+2025-05-12 00:05:57,532 - model_training_20250512_000452 - INFO -   paymentAmount: 1044.0000
+2025-05-12 00:05:57,532 - model_training_20250512_000452 - INFO -   loanAmount: 1021.0000
+2025-05-12 00:05:57,532 - model_training_20250512_000452 - INFO -   leadCost: 627.0000
+2025-05-12 00:05:57,533 - model_training_20250512_000452 - INFO -   total_fraud_indicators: 564.0000
+2025-05-12 00:05:57,533 - model_training_20250512_000452 - INFO -   identity_verification_reason_code: 468.0000
+2025-05-12 00:05:57,533 - model_training_20250512_000452 - INFO -   loanStatus_cleaned: 405.0000
+2025-05-12 00:05:57,533 - model_training_20250512_000452 - INFO -   max_ssns_per_bank_account: 388.0000
+2025-05-12 00:05:57,533 - model_training_20250512_000452 - INFO -   leadType: 365.0000
+2025-05-12 00:05:57,534 - model_training_20250512_000452 - INFO -   name_address_match: 273.0000
+2025-05-12 00:05:57,534 - model_training_20250512_000452 - INFO -   work_phone_listed_as_cellphone: 259.0000
+2025-05-12 00:05:57,534 - model_training_20250512_000452 - INFO -   payFrequency: 257.0000
+2025-05-12 00:05:57,534 - model_training_20250512_000452 - INFO -   invalid_driver_license_format: 240.0000
+2025-05-12 00:05:57,534 - model_training_20250512_000452 - INFO -   fpStatus: 226.0000
+2025-05-12 00:05:57,535 - model_training_20250512_000452 - INFO -   ssn_dob_match: 217.0000
+2025-05-12 00:05:57,535 - model_training_20250512_000452 - INFO -   address_conflict_on_file: 166.0000
+2025-05-12 00:05:57,535 - model_training_20250512_000452 - INFO -   phone_match_type_description: 163.0000
+2025-05-12 00:05:57,536 - model_training_20250512_000452 - INFO - Starting model evaluation
+2025-05-12 00:05:58,769 - model_training_20250512_000452 - INFO - Predictions completed in 1.23 seconds
+2025-05-12 00:05:58,769 - model_training_20250512_000452 - INFO - Test set shape: (111919, 49)
+2025-05-12 00:05:58,839 - model_training_20250512_000452 - INFO - Weighted AUC-ROC: 0.9023
+2025-05-12 00:05:58,891 - model_training_20250512_000452 - INFO - Accuracy: 0.7884
+2025-05-12 00:05:58,892 - model_training_20250512_000452 - INFO - Macro avg precision: 0.8136
+2025-05-12 00:05:58,892 - model_training_20250512_000452 - INFO - Macro avg recall: 0.5673
+2025-05-12 00:05:58,892 - model_training_20250512_000452 - INFO - Macro avg F1-score: 0.5613
+2025-05-12 00:05:58,895 - model_training_20250512_000452 - INFO - Confusion Matrix:
+2025-05-12 00:05:58,895 - model_training_20250512_000452 - INFO -   [49178  6074    17]
+2025-05-12 00:05:58,896 - model_training_20250512_000452 - INFO -   [10920 38840    20]
+2025-05-12 00:05:58,896 - model_training_20250512_000452 - INFO -   [4261 2390  219]
+2025-05-12 00:05:58,896 - model_training_20250512_000452 - INFO - Class-specific metrics:
+2025-05-12 00:05:58,897 - model_training_20250512_000452 - INFO -   Class 0: Precision=0.7641, Recall=0.8898, F1=0.8222, Support=55269.0
+2025-05-12 00:05:58,897 - model_training_20250512_000452 - INFO -   Class 1: Precision=0.8211, Recall=0.7802, F1=0.8001, Support=49780.0
+2025-05-12 00:05:58,897 - model_training_20250512_000452 - INFO -   Class 2: Precision=0.8555, Recall=0.0319, F1=0.0615, Support=6870.0
+2025-05-12 00:05:58,897 - model_training_20250512_000452 - INFO - Saving model artifacts
+2025-05-12 00:05:58,935 - model_training_20250512_000452 - INFO - Model saved to: c:\Users\Horng Woei\Desktop\MoneyLion\models\lightgbm_v20250512_000452.pkl
+2025-05-12 00:05:58,966 - model_training_20250512_000452 - INFO - Latest model copy saved to: c:\Users\Horng Woei\Desktop\MoneyLion\models\lightgbm_model.pkl
+2025-05-12 00:05:58,967 - model_training_20250512_000452 - INFO - Run-specific metrics saved to: c:\Users\Horng Woei\Desktop\MoneyLion\logs\run_20250512_000452\metrics.json
+2025-05-12 00:05:58,968 - model_training_20250512_000452 - INFO - Total pipeline execution time: 66.53 seconds
+2025-05-12 00:05:58,968 - model_training_20250512_000452 - INFO - Model version: 20250512_000452
+2025-05-12 00:05:58,968 - model_training_20250512_000452 - INFO - AUC score: 0.9023
+2025-05-12 00:05:58,968 - model_training_20250512_000452 - INFO - === MODEL TRAINING PIPELINE COMPLETED SUCCESSFULLY ===

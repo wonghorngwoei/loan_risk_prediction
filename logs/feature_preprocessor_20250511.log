@@ -1,0 +1,191 @@
+2025-05-11 23:50:40,303 - feature_preprocessor - INFO - Starting feature preprocessing fit
+2025-05-11 23:50:40,304 - feature_preprocessor - INFO - Detected numeric columns: ['originallyScheduledPaymentAmount', 'paymentAmount', 'apr', 'loanAmount', 'identity_verification_reason_code', 'leadCost', 'total_fraud_indicators', 'max_ssns_per_bank_account', 'fees', 'principal', 'installmentIndex', 'isFunded', 'approved']
+2025-05-11 23:50:40,305 - feature_preprocessor - INFO - Detected categorical columns: ['state', 'loanStatus_cleaned', 'name_address_match', 'leadType', 'payFrequency', 'work_phone_listed_as_cellphone', 'fpStatus', 'invalid_driver_license_format', 'ssn_dob_match', 'driver_license_inconsistent_with_file', 'address_conflict_on_file', 'overall_identity_match_result', 'paymentStatus', 'non_residential_address', 'work_phone_listed_as_homephone', 'phone_inconsistent_with_state', 'phone_match_type_description', 'ssn_name_match', 'non_residential_address_on_file', 'current_address_new_trade_only', 'current_address_not_on_file', 'phone_inconsistent_with_address', 'inquiries_gt_3_last_30days', 'phone_match_result', 'current_address_reported_lt_90days', 'credit_before_age_18', 'ssn_reported_frequently_for_another', 'high_risk_inquiry_address', 'high_risk_address_on_file', 'credit_before_ssn_issue_date', 'high_probability_ssn_belongs_to_another', 'age_younger_than_ssn_issue_date', 'isCollection', 'unverified_ssn_issue_date', 'originated', 'paymentReturnCode']
+2025-05-11 23:50:40,305 - feature_preprocessor - INFO - Fitting StandardScaler on 13 numeric columns
+2025-05-11 23:50:40,307 - feature_preprocessor - INFO - StandardScaler fitted successfully
+2025-05-11 23:50:40,308 - feature_preprocessor - INFO - Fitting LabelEncoder on column: state
+2025-05-11 23:50:40,309 - feature_preprocessor - INFO - Column state has 41 unique values
+2025-05-11 23:50:40,310 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: state
+2025-05-11 23:50:40,310 - feature_preprocessor - INFO - Fitting LabelEncoder on column: loanStatus_cleaned
+2025-05-11 23:50:40,310 - feature_preprocessor - INFO - Column loanStatus_cleaned has 10 unique values
+2025-05-11 23:50:40,311 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: loanStatus_cleaned
+2025-05-11 23:50:40,311 - feature_preprocessor - INFO - Fitting LabelEncoder on column: name_address_match
+2025-05-11 23:50:40,311 - feature_preprocessor - INFO - Column name_address_match has 5 unique values
+2025-05-11 23:50:40,312 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: name_address_match
+2025-05-11 23:50:40,312 - feature_preprocessor - INFO - Fitting LabelEncoder on column: leadType
+2025-05-11 23:50:40,312 - feature_preprocessor - INFO - Column leadType has 10 unique values
+2025-05-11 23:50:40,313 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: leadType
+2025-05-11 23:50:40,313 - feature_preprocessor - INFO - Fitting LabelEncoder on column: payFrequency
+2025-05-11 23:50:40,314 - feature_preprocessor - INFO - Column payFrequency has 5 unique values
+2025-05-11 23:50:40,314 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: payFrequency
+2025-05-11 23:50:40,314 - feature_preprocessor - INFO - Fitting LabelEncoder on column: work_phone_listed_as_cellphone
+2025-05-11 23:50:40,315 - feature_preprocessor - INFO - Column work_phone_listed_as_cellphone has 3 unique values
+2025-05-11 23:50:40,315 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: work_phone_listed_as_cellphone
+2025-05-11 23:50:40,316 - feature_preprocessor - INFO - Fitting LabelEncoder on column: fpStatus
+2025-05-11 23:50:40,316 - feature_preprocessor - INFO - Column fpStatus has 8 unique values
+2025-05-11 23:50:40,316 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: fpStatus
+2025-05-11 23:50:40,316 - feature_preprocessor - INFO - Fitting LabelEncoder on column: invalid_driver_license_format
+2025-05-11 23:50:40,317 - feature_preprocessor - INFO - Column invalid_driver_license_format has 3 unique values
+2025-05-11 23:50:40,318 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: invalid_driver_license_format
+2025-05-11 23:50:40,318 - feature_preprocessor - INFO - Fitting LabelEncoder on column: ssn_dob_match
+2025-05-11 23:50:40,318 - feature_preprocessor - INFO - Column ssn_dob_match has 5 unique values
+2025-05-11 23:50:40,319 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: ssn_dob_match
+2025-05-11 23:50:40,319 - feature_preprocessor - INFO - Fitting LabelEncoder on column: driver_license_inconsistent_with_file
+2025-05-11 23:50:40,319 - feature_preprocessor - INFO - Column driver_license_inconsistent_with_file has 3 unique values
+2025-05-11 23:50:40,320 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: driver_license_inconsistent_with_file
+2025-05-11 23:50:40,320 - feature_preprocessor - INFO - Fitting LabelEncoder on column: address_conflict_on_file
+2025-05-11 23:50:40,321 - feature_preprocessor - INFO - Column address_conflict_on_file has 2 unique values
+2025-05-11 23:50:40,321 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: address_conflict_on_file
+2025-05-11 23:50:40,322 - feature_preprocessor - INFO - Fitting LabelEncoder on column: overall_identity_match_result
+2025-05-11 23:50:40,322 - feature_preprocessor - INFO - Column overall_identity_match_result has 4 unique values
+2025-05-11 23:50:40,323 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: overall_identity_match_result
+2025-05-11 23:50:40,324 - feature_preprocessor - INFO - Fitting LabelEncoder on column: paymentStatus
+2025-05-11 23:50:40,337 - feature_preprocessor - INFO - Column paymentStatus has 1 unique values
+2025-05-11 23:50:40,338 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: paymentStatus
+2025-05-11 23:50:40,338 - feature_preprocessor - INFO - Fitting LabelEncoder on column: non_residential_address
+2025-05-11 23:50:40,339 - feature_preprocessor - INFO - Column non_residential_address has 2 unique values
+2025-05-11 23:50:40,340 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: non_residential_address
+2025-05-11 23:50:40,340 - feature_preprocessor - INFO - Fitting LabelEncoder on column: work_phone_listed_as_homephone
+2025-05-11 23:50:40,340 - feature_preprocessor - INFO - Column work_phone_listed_as_homephone has 3 unique values
+2025-05-11 23:50:40,341 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: work_phone_listed_as_homephone
+2025-05-11 23:50:40,341 - feature_preprocessor - INFO - Fitting LabelEncoder on column: phone_inconsistent_with_state
+2025-05-11 23:50:40,341 - feature_preprocessor - INFO - Column phone_inconsistent_with_state has 3 unique values
+2025-05-11 23:50:40,342 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: phone_inconsistent_with_state
+2025-05-11 23:50:40,342 - feature_preprocessor - INFO - Fitting LabelEncoder on column: phone_match_type_description
+2025-05-11 23:50:40,342 - feature_preprocessor - INFO - Column phone_match_type_description has 8 unique values
+2025-05-11 23:50:40,343 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: phone_match_type_description
+2025-05-11 23:50:40,344 - feature_preprocessor - INFO - Fitting LabelEncoder on column: ssn_name_match
+2025-05-11 23:50:40,345 - feature_preprocessor - INFO - Column ssn_name_match has 4 unique values
+2025-05-11 23:50:40,345 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: ssn_name_match
+2025-05-11 23:50:40,345 - feature_preprocessor - INFO - Fitting LabelEncoder on column: non_residential_address_on_file
+2025-05-11 23:50:40,346 - feature_preprocessor - INFO - Column non_residential_address_on_file has 2 unique values
+2025-05-11 23:50:40,347 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: non_residential_address_on_file
+2025-05-11 23:50:40,347 - feature_preprocessor - INFO - Fitting LabelEncoder on column: current_address_new_trade_only
+2025-05-11 23:50:40,348 - feature_preprocessor - INFO - Column current_address_new_trade_only has 2 unique values
+2025-05-11 23:50:40,349 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: current_address_new_trade_only
+2025-05-11 23:50:40,350 - feature_preprocessor - INFO - Fitting LabelEncoder on column: current_address_not_on_file
+2025-05-11 23:50:40,350 - feature_preprocessor - INFO - Column current_address_not_on_file has 2 unique values
+2025-05-11 23:50:40,351 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: current_address_not_on_file
+2025-05-11 23:50:40,352 - feature_preprocessor - INFO - Fitting LabelEncoder on column: phone_inconsistent_with_address
+2025-05-11 23:50:40,352 - feature_preprocessor - INFO - Column phone_inconsistent_with_address has 2 unique values
+2025-05-11 23:50:40,353 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: phone_inconsistent_with_address
+2025-05-11 23:50:40,353 - feature_preprocessor - INFO - Fitting LabelEncoder on column: inquiries_gt_3_last_30days
+2025-05-11 23:50:40,354 - feature_preprocessor - INFO - Column inquiries_gt_3_last_30days has 2 unique values
+2025-05-11 23:50:40,355 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: inquiries_gt_3_last_30days
+2025-05-11 23:50:40,355 - feature_preprocessor - INFO - Fitting LabelEncoder on column: phone_match_result
+2025-05-11 23:50:40,356 - feature_preprocessor - INFO - Column phone_match_result has 5 unique values
+2025-05-11 23:50:40,356 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: phone_match_result
+2025-05-11 23:50:40,357 - feature_preprocessor - INFO - Fitting LabelEncoder on column: current_address_reported_lt_90days
+2025-05-11 23:50:40,358 - feature_preprocessor - INFO - Column current_address_reported_lt_90days has 2 unique values
+2025-05-11 23:50:40,359 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: current_address_reported_lt_90days
+2025-05-11 23:50:40,359 - feature_preprocessor - INFO - Fitting LabelEncoder on column: credit_before_age_18
+2025-05-11 23:50:40,360 - feature_preprocessor - INFO - Column credit_before_age_18 has 2 unique values
+2025-05-11 23:50:40,361 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: credit_before_age_18
+2025-05-11 23:50:40,361 - feature_preprocessor - INFO - Fitting LabelEncoder on column: ssn_reported_frequently_for_another
+2025-05-11 23:50:40,362 - feature_preprocessor - INFO - Column ssn_reported_frequently_for_another has 2 unique values
+2025-05-11 23:50:40,363 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: ssn_reported_frequently_for_another
+2025-05-11 23:50:40,363 - feature_preprocessor - INFO - Fitting LabelEncoder on column: high_risk_inquiry_address
+2025-05-11 23:50:40,364 - feature_preprocessor - INFO - Column high_risk_inquiry_address has 2 unique values
+2025-05-11 23:50:40,364 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: high_risk_inquiry_address
+2025-05-11 23:50:40,364 - feature_preprocessor - INFO - Fitting LabelEncoder on column: high_risk_address_on_file
+2025-05-11 23:50:40,365 - feature_preprocessor - INFO - Column high_risk_address_on_file has 2 unique values
+2025-05-11 23:50:40,365 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: high_risk_address_on_file
+2025-05-11 23:50:40,366 - feature_preprocessor - INFO - Fitting LabelEncoder on column: credit_before_ssn_issue_date
+2025-05-11 23:50:40,366 - feature_preprocessor - INFO - Column credit_before_ssn_issue_date has 2 unique values
+2025-05-11 23:50:40,367 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: credit_before_ssn_issue_date
+2025-05-11 23:50:40,368 - feature_preprocessor - INFO - Fitting LabelEncoder on column: high_probability_ssn_belongs_to_another
+2025-05-11 23:50:40,369 - feature_preprocessor - INFO - Column high_probability_ssn_belongs_to_another has 2 unique values
+2025-05-11 23:50:40,369 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: high_probability_ssn_belongs_to_another
+2025-05-11 23:50:40,370 - feature_preprocessor - INFO - Fitting LabelEncoder on column: age_younger_than_ssn_issue_date
+2025-05-11 23:50:40,370 - feature_preprocessor - INFO - Column age_younger_than_ssn_issue_date has 2 unique values
+2025-05-11 23:50:40,371 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: age_younger_than_ssn_issue_date
+2025-05-11 23:50:40,371 - feature_preprocessor - INFO - Fitting LabelEncoder on column: isCollection
+2025-05-11 23:50:40,372 - feature_preprocessor - INFO - Column isCollection has 2 unique values
+2025-05-11 23:50:40,373 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: isCollection
+2025-05-11 23:50:40,373 - feature_preprocessor - INFO - Fitting LabelEncoder on column: unverified_ssn_issue_date
+2025-05-11 23:50:40,374 - feature_preprocessor - INFO - Column unverified_ssn_issue_date has 2 unique values
+2025-05-11 23:50:40,374 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: unverified_ssn_issue_date
+2025-05-11 23:50:40,375 - feature_preprocessor - INFO - Fitting LabelEncoder on column: originated
+2025-05-11 23:50:40,375 - feature_preprocessor - INFO - Column originated has 2 unique values
+2025-05-11 23:50:40,376 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: originated
+2025-05-11 23:50:40,376 - feature_preprocessor - INFO - Fitting LabelEncoder on column: paymentReturnCode
+2025-05-11 23:50:40,376 - feature_preprocessor - INFO - Column paymentReturnCode has 1 unique values
+2025-05-11 23:50:40,377 - feature_preprocessor - INFO - LabelEncoder fitted successfully for column: paymentReturnCode
+2025-05-11 23:50:40,377 - feature_preprocessor - INFO - Feature preprocessing fit completed successfully
+2025-05-11 23:50:40,378 - feature_preprocessor - INFO - Starting feature preprocessing transform
+2025-05-11 23:50:40,378 - feature_preprocessor - INFO - Input data shape: (1000, 49)
+2025-05-11 23:50:40,379 - feature_preprocessor - INFO - Transforming 13 numeric columns
+2025-05-11 23:50:40,382 - feature_preprocessor - INFO - Numeric columns transformed successfully
+2025-05-11 23:50:40,382 - feature_preprocessor - INFO - Transforming categorical column: state
+2025-05-11 23:50:40,384 - feature_preprocessor - INFO - Column state transformed successfully
+2025-05-11 23:50:40,385 - feature_preprocessor - INFO - Transforming categorical column: loanStatus_cleaned
+2025-05-11 23:50:40,387 - feature_preprocessor - INFO - Column loanStatus_cleaned transformed successfully
+2025-05-11 23:50:40,387 - feature_preprocessor - INFO - Transforming categorical column: name_address_match
+2025-05-11 23:50:40,388 - feature_preprocessor - INFO - Column name_address_match transformed successfully
+2025-05-11 23:50:40,388 - feature_preprocessor - INFO - Transforming categorical column: leadType
+2025-05-11 23:50:40,390 - feature_preprocessor - INFO - Column leadType transformed successfully
+2025-05-11 23:50:40,391 - feature_preprocessor - INFO - Transforming categorical column: payFrequency
+2025-05-11 23:50:40,392 - feature_preprocessor - INFO - Column payFrequency transformed successfully
+2025-05-11 23:50:40,393 - feature_preprocessor - INFO - Transforming categorical column: work_phone_listed_as_cellphone
+2025-05-11 23:50:40,394 - feature_preprocessor - INFO - Column work_phone_listed_as_cellphone transformed successfully
+2025-05-11 23:50:40,394 - feature_preprocessor - INFO - Transforming categorical column: fpStatus
+2025-05-11 23:50:40,396 - feature_preprocessor - INFO - Column fpStatus transformed successfully
+2025-05-11 23:50:40,396 - feature_preprocessor - INFO - Transforming categorical column: invalid_driver_license_format
+2025-05-11 23:50:40,398 - feature_preprocessor - INFO - Column invalid_driver_license_format transformed successfully
+2025-05-11 23:50:40,398 - feature_preprocessor - INFO - Transforming categorical column: ssn_dob_match
+2025-05-11 23:50:40,399 - feature_preprocessor - INFO - Column ssn_dob_match transformed successfully
+2025-05-11 23:50:40,399 - feature_preprocessor - INFO - Transforming categorical column: driver_license_inconsistent_with_file
+2025-05-11 23:50:40,401 - feature_preprocessor - INFO - Column driver_license_inconsistent_with_file transformed successfully
+2025-05-11 23:50:40,401 - feature_preprocessor - INFO - Transforming categorical column: address_conflict_on_file
+2025-05-11 23:50:40,403 - feature_preprocessor - INFO - Column address_conflict_on_file transformed successfully
+2025-05-11 23:50:40,403 - feature_preprocessor - INFO - Transforming categorical column: overall_identity_match_result
+2025-05-11 23:50:40,404 - feature_preprocessor - INFO - Column overall_identity_match_result transformed successfully
+2025-05-11 23:50:40,404 - feature_preprocessor - INFO - Transforming categorical column: paymentStatus
+2025-05-11 23:50:40,405 - feature_preprocessor - INFO - Column paymentStatus transformed successfully
+2025-05-11 23:50:40,405 - feature_preprocessor - INFO - Transforming categorical column: non_residential_address
+2025-05-11 23:50:40,407 - feature_preprocessor - INFO - Column non_residential_address transformed successfully
+2025-05-11 23:50:40,407 - feature_preprocessor - INFO - Transforming categorical column: work_phone_listed_as_homephone
+2025-05-11 23:50:40,409 - feature_preprocessor - INFO - Column work_phone_listed_as_homephone transformed successfully
+2025-05-11 23:50:40,409 - feature_preprocessor - INFO - Transforming categorical column: phone_inconsistent_with_state
+2025-05-11 23:50:40,410 - feature_preprocessor - INFO - Column phone_inconsistent_with_state transformed successfully
+2025-05-11 23:50:40,410 - feature_preprocessor - INFO - Transforming categorical column: phone_match_type_description
+2025-05-11 23:50:40,411 - feature_preprocessor - INFO - Column phone_match_type_description transformed successfully
+2025-05-11 23:50:40,411 - feature_preprocessor - INFO - Transforming categorical column: ssn_name_match
+2025-05-11 23:50:40,413 - feature_preprocessor - INFO - Column ssn_name_match transformed successfully
+2025-05-11 23:50:40,413 - feature_preprocessor - INFO - Transforming categorical column: non_residential_address_on_file
+2025-05-11 23:50:40,414 - feature_preprocessor - INFO - Column non_residential_address_on_file transformed successfully
+2025-05-11 23:50:40,415 - feature_preprocessor - INFO - Transforming categorical column: current_address_new_trade_only
+2025-05-11 23:50:40,416 - feature_preprocessor - INFO - Column current_address_new_trade_only transformed successfully
+2025-05-11 23:50:40,416 - feature_preprocessor - INFO - Transforming categorical column: current_address_not_on_file
+2025-05-11 23:50:40,418 - feature_preprocessor - INFO - Column current_address_not_on_file transformed successfully
+2025-05-11 23:50:40,419 - feature_preprocessor - INFO - Transforming categorical column: phone_inconsistent_with_address
+2025-05-11 23:50:40,420 - feature_preprocessor - INFO - Column phone_inconsistent_with_address transformed successfully
+2025-05-11 23:50:40,420 - feature_preprocessor - INFO - Transforming categorical column: inquiries_gt_3_last_30days
+2025-05-11 23:50:40,421 - feature_preprocessor - INFO - Column inquiries_gt_3_last_30days transformed successfully
+2025-05-11 23:50:40,422 - feature_preprocessor - INFO - Transforming categorical column: phone_match_result
+2025-05-11 23:50:40,423 - feature_preprocessor - INFO - Column phone_match_result transformed successfully
+2025-05-11 23:50:40,423 - feature_preprocessor - INFO - Transforming categorical column: current_address_reported_lt_90days
+2025-05-11 23:50:40,425 - feature_preprocessor - INFO - Column current_address_reported_lt_90days transformed successfully
+2025-05-11 23:50:40,425 - feature_preprocessor - INFO - Transforming categorical column: credit_before_age_18
+2025-05-11 23:50:40,426 - feature_preprocessor - INFO - Column credit_before_age_18 transformed successfully
+2025-05-11 23:50:40,426 - feature_preprocessor - INFO - Transforming categorical column: ssn_reported_frequently_for_another
+2025-05-11 23:50:40,428 - feature_preprocessor - INFO - Column ssn_reported_frequently_for_another transformed successfully
+2025-05-11 23:50:40,429 - feature_preprocessor - INFO - Transforming categorical column: high_risk_inquiry_address
+2025-05-11 23:50:40,430 - feature_preprocessor - INFO - Column high_risk_inquiry_address transformed successfully
+2025-05-11 23:50:40,431 - feature_preprocessor - INFO - Transforming categorical column: high_risk_address_on_file
+2025-05-11 23:50:40,432 - feature_preprocessor - INFO - Column high_risk_address_on_file transformed successfully
+2025-05-11 23:50:40,432 - feature_preprocessor - INFO - Transforming categorical column: credit_before_ssn_issue_date
+2025-05-11 23:50:40,433 - feature_preprocessor - INFO - Column credit_before_ssn_issue_date transformed successfully
+2025-05-11 23:50:40,434 - feature_preprocessor - INFO - Transforming categorical column: high_probability_ssn_belongs_to_another
+2025-05-11 23:50:40,435 - feature_preprocessor - INFO - Column high_probability_ssn_belongs_to_another transformed successfully
+2025-05-11 23:50:40,436 - feature_preprocessor - INFO - Transforming categorical column: age_younger_than_ssn_issue_date
+2025-05-11 23:50:40,437 - feature_preprocessor - INFO - Column age_younger_than_ssn_issue_date transformed successfully
+2025-05-11 23:50:40,437 - feature_preprocessor - INFO - Transforming categorical column: isCollection
+2025-05-11 23:50:40,439 - feature_preprocessor - INFO - Column isCollection transformed successfully
+2025-05-11 23:50:40,439 - feature_preprocessor - INFO - Transforming categorical column: unverified_ssn_issue_date
+2025-05-11 23:50:40,441 - feature_preprocessor - INFO - Column unverified_ssn_issue_date transformed successfully
+2025-05-11 23:50:40,441 - feature_preprocessor - INFO - Transforming categorical column: originated
+2025-05-11 23:50:40,443 - feature_preprocessor - INFO - Column originated transformed successfully
+2025-05-11 23:50:40,443 - feature_preprocessor - INFO - Transforming categorical column: paymentReturnCode
+2025-05-11 23:50:40,444 - feature_preprocessor - INFO - Column paymentReturnCode transformed successfully
+2025-05-11 23:50:40,444 - feature_preprocessor - INFO - Feature transformation completed. Output shape: (1000, 49)

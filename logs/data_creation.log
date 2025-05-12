@@ -1,0 +1,54 @@
+2025-05-11 23:50:09,904 - INFO - === Starting Sample Data Creation ===
+2025-05-11 23:50:10,087 - INFO - Sample data created at: C:\Users\Horng Woei\Desktop\MoneyLion\data\sample_loan_data.csv
+2025-05-11 23:50:10,088 - INFO - Data shape: (1000, 49)
+2025-05-11 23:50:10,088 - INFO - Sample data columns:
+originallyScheduledPaymentAmount
+paymentAmount
+state
+apr
+loanAmount
+identity_verification_reason_code
+leadCost
+total_fraud_indicators
+loanStatus_cleaned
+name_address_match
+max_ssns_per_bank_account
+leadType
+payFrequency
+work_phone_listed_as_cellphone
+fpStatus
+invalid_driver_license_format
+ssn_dob_match
+driver_license_inconsistent_with_file
+address_conflict_on_file
+overall_identity_match_result
+paymentStatus
+non_residential_address
+work_phone_listed_as_homephone
+phone_inconsistent_with_state
+phone_match_type_description
+ssn_name_match
+non_residential_address_on_file
+current_address_new_trade_only
+current_address_not_on_file
+fees
+phone_inconsistent_with_address
+inquiries_gt_3_last_30days
+principal
+phone_match_result
+current_address_reported_lt_90days
+installmentIndex
+credit_before_age_18
+ssn_reported_frequently_for_another
+high_risk_inquiry_address
+high_risk_address_on_file
+credit_before_ssn_issue_date
+high_probability_ssn_belongs_to_another
+age_younger_than_ssn_issue_date
+isCollection
+unverified_ssn_issue_date
+originated
+paymentReturnCode
+isFunded
+approved
+2025-05-11 23:50:10,092 - INFO - === Sample Data Creation Completed ===

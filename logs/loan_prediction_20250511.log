@@ -1,0 +1,74 @@
+2025-05-11 23:50:39,920 - loan_prediction - INFO - === Starting Loan Prediction Pipeline ===
+2025-05-11 23:50:39,920 - loan_prediction - INFO - Starting loan prediction process
+2025-05-11 23:50:39,921 - loan_prediction - INFO - Output directory confirmed: c:\Users\Horng Woei\Desktop\MoneyLion\data\predictions
+2025-05-11 23:50:39,921 - loan_prediction - INFO - Loading model from: c:\Users\Horng Woei\Desktop\MoneyLion\models\lightgbm_model.pkl
+2025-05-11 23:50:40,200 - loan_prediction - INFO - Model loaded successfully
+2025-05-11 23:50:40,200 - loan_prediction - INFO - Loading data from: c:\Users\Horng Woei\Desktop\MoneyLion\data\sample_loan_data.csv
+2025-05-11 23:50:40,264 - loan_prediction - INFO - Data loaded successfully. Shape: (1000, 49)
+2025-05-11 23:50:40,264 - loan_prediction - INFO - Performing basic data validation
+2025-05-11 23:50:40,265 - loan_prediction - INFO - Missing values in the dataset: 0
+2025-05-11 23:50:40,265 - loan_prediction - INFO - Data summary statistics:
+2025-05-11 23:50:40,266 - loan_prediction - INFO - originallyScheduledPaymentAmount: min=1.0648421925196772, max=996.9460869744628, mean=506.10, median=506.9010661859408
+2025-05-11 23:50:40,267 - loan_prediction - INFO - paymentAmount: min=0.1474022890380899, max=999.8409289365708, mean=507.49, median=523.9293833183001
+2025-05-11 23:50:40,267 - loan_prediction - INFO - state: 41 unique values
+2025-05-11 23:50:40,267 - loan_prediction - INFO - apr: min=0.0042537318534296, max=19.967783161529127, mean=9.69, median=9.368749854792338
+2025-05-11 23:50:40,268 - loan_prediction - INFO - loanAmount: min=16.960320562442455, max=4999.1829354803895, mean=2495.00, median=2531.7956934060476
+2025-05-11 23:50:40,268 - loan_prediction - INFO - identity_verification_reason_code: min=0, max=149, mean=76.30, median=75.0
+2025-05-11 23:50:40,269 - loan_prediction - INFO - leadCost: min=0.0141092127490971, max=49.98714755898358, mean=24.29, median=24.158400033569905
+2025-05-11 23:50:40,269 - loan_prediction - INFO - total_fraud_indicators: min=0, max=9, mean=4.47, median=4.0
+2025-05-11 23:50:40,270 - loan_prediction - INFO - loanStatus_cleaned: 10 unique values
+2025-05-11 23:50:40,270 - loan_prediction - INFO - name_address_match: 5 unique values
+2025-05-11 23:50:40,271 - loan_prediction - INFO - max_ssns_per_bank_account: min=0, max=4, mean=2.00, median=2.0
+2025-05-11 23:50:40,271 - loan_prediction - INFO - leadType: 10 unique values
+2025-05-11 23:50:40,271 - loan_prediction - INFO - payFrequency: 5 unique values
+2025-05-11 23:50:40,272 - loan_prediction - INFO - work_phone_listed_as_cellphone: 3 unique values
+2025-05-11 23:50:40,272 - loan_prediction - INFO - fpStatus: 8 unique values
+2025-05-11 23:50:40,272 - loan_prediction - INFO - invalid_driver_license_format: 3 unique values
+2025-05-11 23:50:40,273 - loan_prediction - INFO - ssn_dob_match: 5 unique values
+2025-05-11 23:50:40,273 - loan_prediction - INFO - driver_license_inconsistent_with_file: 3 unique values
+2025-05-11 23:50:40,273 - loan_prediction - INFO - address_conflict_on_file: 2 unique values
+2025-05-11 23:50:40,274 - loan_prediction - INFO - overall_identity_match_result: 4 unique values
+2025-05-11 23:50:40,289 - loan_prediction - INFO - paymentStatus: 1 unique values
+2025-05-11 23:50:40,290 - loan_prediction - INFO - non_residential_address: 2 unique values
+2025-05-11 23:50:40,291 - loan_prediction - INFO - work_phone_listed_as_homephone: 3 unique values
+2025-05-11 23:50:40,291 - loan_prediction - INFO - phone_inconsistent_with_state: 3 unique values
+2025-05-11 23:50:40,291 - loan_prediction - INFO - phone_match_type_description: 8 unique values
+2025-05-11 23:50:40,292 - loan_prediction - INFO - ssn_name_match: 4 unique values
+2025-05-11 23:50:40,292 - loan_prediction - INFO - non_residential_address_on_file: 2 unique values
+2025-05-11 23:50:40,293 - loan_prediction - INFO - current_address_new_trade_only: 2 unique values
+2025-05-11 23:50:40,293 - loan_prediction - INFO - current_address_not_on_file: 2 unique values
+2025-05-11 23:50:40,294 - loan_prediction - INFO - fees: min=1.0951825075035115, max=998.8747098142748, mean=507.25, median=505.50238377512744
+2025-05-11 23:50:40,294 - loan_prediction - INFO - phone_inconsistent_with_address: 2 unique values
+2025-05-11 23:50:40,295 - loan_prediction - INFO - inquiries_gt_3_last_30days: 2 unique values
+2025-05-11 23:50:40,295 - loan_prediction - INFO - principal: min=0.0085327301161397, max=999.5797486350637, mean=509.00, median=512.6272993913899
+2025-05-11 23:50:40,295 - loan_prediction - INFO - phone_match_result: 5 unique values
+2025-05-11 23:50:40,296 - loan_prediction - INFO - current_address_reported_lt_90days: 2 unique values
+2025-05-11 23:50:40,296 - loan_prediction - INFO - installmentIndex: min=0, max=19, mean=9.52, median=9.0
+2025-05-11 23:50:40,297 - loan_prediction - INFO - credit_before_age_18: 2 unique values
+2025-05-11 23:50:40,298 - loan_prediction - INFO - ssn_reported_frequently_for_another: 2 unique values
+2025-05-11 23:50:40,298 - loan_prediction - INFO - high_risk_inquiry_address: 2 unique values
+2025-05-11 23:50:40,298 - loan_prediction - INFO - high_risk_address_on_file: 2 unique values
+2025-05-11 23:50:40,299 - loan_prediction - INFO - credit_before_ssn_issue_date: 2 unique values
+2025-05-11 23:50:40,299 - loan_prediction - INFO - high_probability_ssn_belongs_to_another: 2 unique values
+2025-05-11 23:50:40,299 - loan_prediction - INFO - age_younger_than_ssn_issue_date: 2 unique values
+2025-05-11 23:50:40,300 - loan_prediction - INFO - isCollection: 2 unique values
+2025-05-11 23:50:40,300 - loan_prediction - INFO - unverified_ssn_issue_date: 2 unique values
+2025-05-11 23:50:40,300 - loan_prediction - INFO - originated: 2 unique values
+2025-05-11 23:50:40,301 - loan_prediction - INFO - paymentReturnCode: 1 unique values
+2025-05-11 23:50:40,301 - loan_prediction - INFO - isFunded: min=0, max=1, mean=0.53, median=1.0
+2025-05-11 23:50:40,302 - loan_prediction - INFO - approved: min=0, max=1, mean=0.50, median=0.0
+2025-05-11 23:50:40,302 - loan_prediction - INFO - Initializing feature preprocessor
+2025-05-11 23:50:40,303 - loan_prediction - INFO - Target column 'loanRisk' not found in data
+2025-05-11 23:50:40,303 - loan_prediction - INFO - Fitting feature preprocessor
+2025-05-11 23:50:40,377 - loan_prediction - INFO - Transforming features
+2025-05-11 23:50:40,444 - loan_prediction - INFO - Features transformed successfully. Shape: (1000, 49)
+2025-05-11 23:50:40,445 - loan_prediction - INFO - Making predictions
+2025-05-11 23:50:40,498 - loan_prediction - INFO - Predictions completed in 0.05 seconds
+2025-05-11 23:50:40,498 - loan_prediction - INFO - Class distribution in predictions: [ 57 943]
+2025-05-11 23:50:40,498 - loan_prediction - INFO - Risk label mapping: {0: 'High Risk', 1: 'Low Risk', 2: 'Moderate Risk'}
+2025-05-11 23:50:40,499 - loan_prediction - INFO - Preparing results dataframe
+2025-05-11 23:50:40,501 - loan_prediction - INFO - Risk distribution in predictions: {'Low Risk': 943, 'High Risk': 57}
+2025-05-11 23:50:40,501 - loan_prediction - INFO - Saving predictions to: c:\Users\Horng Woei\Desktop\MoneyLion\data\predictions\predictions_20250511_235040.csv
+2025-05-11 23:50:40,678 - loan_prediction - INFO - Predictions saved successfully
+2025-05-11 23:50:40,684 - loan_prediction - INFO - === Loan Prediction Pipeline Completed Successfully ===
+2025-05-11 23:50:40,684 - loan_prediction - INFO - Output saved to: c:\Users\Horng Woei\Desktop\MoneyLion\data\predictions\predictions_20250511_235040.csv
